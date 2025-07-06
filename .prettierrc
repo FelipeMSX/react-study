@@ -1,0 +1,26 @@
+{
+  "singleQuote": false,
+  "semi": true,
+  "tabWidth": 4,
+  "printWidth": 100,
+  "quoteProps": "consistent",
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": [
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+        "*.json",
+        "*.yml",
+        "*.yaml",
+        "*.md"
+      ],
+      "options": {
+        "tabWidth": 4,
+        "singleAttributePerLine": true
+      }
+    }
+  ]
+}
