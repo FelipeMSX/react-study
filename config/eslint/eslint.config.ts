@@ -32,7 +32,7 @@ export default tseslint.config(
             ecmaVersion: 2022,
             sourceType: "module",
             parserOptions: {
-                project: true,
+                projectService: true,
             },
         },
         settings: {
@@ -76,7 +76,7 @@ export default tseslint.config(
                 navigator: true,
             },
             parserOptions: {
-                project: true,
+                projectService: true,
                 ecmaFeatures: {
                     jsx: true,
                 },
