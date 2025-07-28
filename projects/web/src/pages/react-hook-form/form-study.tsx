@@ -4,9 +4,9 @@
     1. See the impact of using () => directly in a click funciton.
 */
 
-import React, { useCallback } from "react";
+import React, { useCallback, type PropsWithChildren } from "react";
 import { useState } from "react";
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { FormProvider, useForm, useFormContext, type SubmitHandler } from "react-hook-form";
 
 type IFormInput = {
     name: string;
@@ -14,7 +14,8 @@ type IFormInput = {
 };
 
 export function MainComponent() {
-    const { register, handleSubmit } = useForm<IFormInput>();
+    const form = useForm<IFormInput>();
+    const { register, reset, handleSubmit } = form;
 
     const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
     // Without useCallback: new function every render, Child rerenders
@@ -24,13 +25,43 @@ export function MainComponent() {
     // const handleClick = useCallback(() => setCount((c) => c + 1), []);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>First Name</label>
-            <input {...register("name")} />
-            <label>Email</label>
-            <input {...register("email")} />
+        <FormProvider {...form}>
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col gap-2 "
+            >
+                <FormControl>
+                    <label>First Name</label>
+                    <input
+                        {...register("name")}
+                        className="border-1 rounded-sm"
+                    />
+                </FormControl>
+                <FormEmailNotControlled />
 
-            <input type="submit" />
-        </form>
+                <input type="submit" />
+            </form>
+        </FormProvider>
+    );
+}
+
+type IFormControlProps = PropsWithChildren;
+
+function FormControl({ children }: IFormControlProps) {
+    return <div className="flex gap-2">{children}</div>;
+}
+
+function FormEmailNotControlled() {
+    console.log("FormEmail rendered");
+    const { register } = useFormContext();
+
+    return (
+        <FormControl>
+            <label>Email</label>
+            <input
+                {...register("email")}
+                className="border-1"
+            />
+        </FormControl>
     );
 }
