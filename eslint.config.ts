@@ -1,3 +1,3 @@
-import { defaultConfig } from "./config";
+import { defaultConfig } from "@monorepo/eslint";
 
 export default defaultConfig;

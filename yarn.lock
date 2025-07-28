@@ -633,16 +633,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monorepo/study@workspace:.":
+"@monorepo/eslint@workspace:packages/eslint":
   version: 0.0.0-use.local
-  resolution: "@monorepo/study@workspace:."
+  resolution: "@monorepo/eslint@workspace:packages/eslint"
   dependencies:
-    "@eslint/js": "npm:^9.30.1"
-    "@types/cli-progress": "npm:^3"
-    "@types/k6": "npm:^1.0.2"
-    "@types/node": "npm:^22.10.6"
-    "@vitest/coverage-v8": "npm:^3.1.1"
-    cli-progress: "npm:^3.12.0"
     eslint: "npm:^9.24.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-import: "npm:^2.32.0"
@@ -653,6 +647,19 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-simple-import-sort: "npm:^12.1.1"
     jiti: "npm:^2.4.2"
+  languageName: unknown
+  linkType: soft
+
+"@monorepo/study@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@monorepo/study@workspace:."
+  dependencies:
+    "@eslint/js": "npm:^9.30.1"
+    "@types/cli-progress": "npm:^3"
+    "@types/k6": "npm:^1.0.2"
+    "@types/node": "npm:^22.10.6"
+    "@vitest/coverage-v8": "npm:^3.1.1"
+    cli-progress: "npm:^3.12.0"
     k6: "npm:^0.0.0"
     prettier: "npm:^3.5.3"
     typescript: "npm:5.7.2"
@@ -1928,6 +1935,13 @@ __metadata:
   version: 2.0.0
   resolution: "convert-source-map@npm:2.0.0"
   checksum: 10c0/8f2f7a27a1a011cc6cc88cc4da2d7d0cfa5ee0369508baae3d98c260bb3ac520691464e5bbe4ae7cdf09860c1d69ecc6f70c63c6e7c7f7e3f18ec08484dc7d9b
+  languageName: node
+  linkType: hard
+
+"cookie@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "cookie@npm:1.0.2"
+  checksum: 10c0/fd25fe79e8fbcfcaf6aa61cd081c55d144eeeba755206c058682257cb38c4bd6795c6620de3f064c740695bb65b7949ebb1db7a95e4636efb8357a335ad3f54b
   languageName: node
   linkType: hard
 
@@ -4450,6 +4464,7 @@ __metadata:
     postcss: "npm:^8.5.6"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
+    react-router-dom: "npm:^7.6.3"
     tailwindcss: "npm:^4.1.11"
     typescript: "npm:~5.8.3"
     typescript-eslint: "npm:^8.35.1"
@@ -4461,6 +4476,34 @@ __metadata:
   version: 0.17.0
   resolution: "react-refresh@npm:0.17.0"
   checksum: 10c0/002cba940384c9930008c0bce26cac97a9d5682bc623112c2268ba0c155127d9c178a9a5cc2212d560088d60dfd503edd808669a25f9b377f316a32361d0b23c
+  languageName: node
+  linkType: hard
+
+"react-router-dom@npm:^7.6.3":
+  version: 7.6.3
+  resolution: "react-router-dom@npm:7.6.3"
+  dependencies:
+    react-router: "npm:7.6.3"
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  checksum: 10c0/51ebd9c71255d836a055b87745070c1800733212088fbb1a7031ce16cbf420ad12a4286faebfc7dc62be6931a0eee74f4dc68f05e7d7a63933bc53b5c9c101f6
+  languageName: node
+  linkType: hard
+
+"react-router@npm:7.6.3":
+  version: 7.6.3
+  resolution: "react-router@npm:7.6.3"
+  dependencies:
+    cookie: "npm:^1.0.1"
+    set-cookie-parser: "npm:^2.6.0"
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+  checksum: 10c0/43c8dd124d1c3f9fb11afa905fb0c87e19b73b04877e9be09f84eac34948ea90d6c4aae408c8030fe6dc4ed88c0bcf2e857b53a817ebbe5ce7d26e485a330c7d
   languageName: node
   linkType: hard
 
@@ -4721,6 +4764,13 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/aca305edfbf2383c22571cb7714f48cadc7ac95371b4b52362fb8eeffdfbc0de0669368b82b2b15978f8848f01d7114da65697e56cd8c37b0dab8c58e543f9ea
+  languageName: node
+  linkType: hard
+
+"set-cookie-parser@npm:^2.6.0":
+  version: 2.7.1
+  resolution: "set-cookie-parser@npm:2.7.1"
+  checksum: 10c0/060c198c4c92547ac15988256f445eae523f57f2ceefeccf52d30d75dedf6bff22b9c26f756bd44e8e560d44ff4ab2130b178bd2e52ef5571bf7be3bd7632d9a
   languageName: node
   linkType: hard
 

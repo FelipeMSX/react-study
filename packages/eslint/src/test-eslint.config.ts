@@ -8,7 +8,7 @@ import react from "eslint-plugin-react";
 import tseslint from "typescript-eslint";
 import jsoncPlugin from "eslint-plugin-jsonc";
 
-export default tseslint.config(
+export const defaultConfig = tseslint.config(
     // Base recommended configs
     eslint.configs.recommended,
     jsxA11Y.flatConfigs.recommended,
