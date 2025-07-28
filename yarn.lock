@@ -4440,6 +4440,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.61.1":
+  version: 7.61.1
+  resolution: "react-hook-form@npm:7.61.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  checksum: 10c0/c241bca80f6d5f9f8b4f24b668670a3ee7249f9cf99537219c4ac1072431493d3768a910b6f2aaff20689a727d0e2797aeacb1ab9285b3e59309de3dd1bead41
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -4447,9 +4456,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-project@workspace:projects/react-study/web":
+"react-project@workspace:projects/web":
   version: 0.0.0-use.local
-  resolution: "react-project@workspace:projects/react-study/web"
+  resolution: "react-project@workspace:projects/web"
   dependencies:
     "@eslint/js": "npm:^9.30.1"
     "@tailwindcss/vite": "npm:^4.1.11"
@@ -4464,11 +4473,13 @@ __metadata:
     postcss: "npm:^8.5.6"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
+    react-hook-form: "npm:^7.61.1"
     react-router-dom: "npm:^7.6.3"
     tailwindcss: "npm:^4.1.11"
     typescript: "npm:~5.8.3"
     typescript-eslint: "npm:^8.35.1"
     vite: "npm:^7.0.3"
+    zod: "npm:^4.0.10"
   languageName: unknown
   linkType: soft
 
@@ -5711,5 +5722,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 10c0/dceb44c28578b31641e13695d200d34ec4ab3966a5729814d5445b194933c096b7ced71494ce53a0e8820685d1d010df8b2422e5bf2cdea7e469d97ffbea306f
+  languageName: node
+  linkType: hard
+
+"zod@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "zod@npm:4.0.10"
+  checksum: 10c0/8d1145e767c22b571a7967c198632f69ef15ce571b5021cdba84cf31d9af2ca40b033ea2fcbe5797cfd2da9c67b3a6ebe435938eabfbb1d1f3ab2f17f00f443b
   languageName: node
   linkType: hard
