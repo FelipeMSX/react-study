@@ -3,32 +3,19 @@
 /*
     1. See the impact of using () => directly in a click funciton.
 */
+import { useEffect } from "react";
 
-import React, { useCallback, useEffect, type PropsWithChildren } from "react";
-import { useState } from "react";
 import {
     Controller,
-    FormProvider,
     useForm,
     useFormContext,
-    useWatch,
-    type Control,
     type Path,
     type SubmitHandler,
     type UseFormRegister,
-    type UseFormSubscribe,
 } from "react-hook-form";
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "../../components/form";
 
-import { Input as InputShadcn, type InputProps as InputShadcnProps } from "../../components/input";
-import { set } from "zod";
+import { Form } from "../../components/form";
+import { Input as InputShadcn } from "../../components/input";
 
 type IFormInput = {
     inputWithRegister: string;
@@ -37,6 +24,8 @@ type IFormInput = {
     inputWithShadcn: string;
     inputWithShadcnControlled: string;
     inputWithShadcnControlled2: string;
+    inputWithShadcnControlled3: string;
+
     inputWithWatched: string;
     inputWithWatched2: string;
     inputWithWatched3: string;
@@ -70,6 +59,10 @@ export function MainComponent() {
 
     // With useCallback: function reference is stable, Child doesn't rerender unless count changes
     // const handleClick = useCallback(() => setCount((c) => c + 1), []);
+
+    useEffect(() => {
+        console.log(control);
+    }, []);
 
     return (
         <Form {...form}>
@@ -106,6 +99,11 @@ export function MainComponent() {
                     <InputControlledShadcn name="inputWithShadcnControlled2" />
                 </section>
 
+                <section>
+                    <label>Shadcn input with controlled 3 component </label>
+                    <InputControlledShadcn name="inputWithShadcnControlled3" />
+                </section>
+
                 <input type="submit" />
             </form>
         </Form>
@@ -129,14 +127,14 @@ function InputNotControlled({
 
 function InputNotControlledShadcn({ name }: { name: Path<IFormInput> }) {
     const { register } = useFormContext<IFormInput>();
-    console.log("InputNotControlledShadcn rendered");
+    console.log("InputNotControlledShadcn rendered" + name);
 
     return <InputShadcn {...register(name)} />;
 }
 
 function InputControlledShadcn({ name }: { name: Path<IFormInput> }) {
     const { control } = useFormContext<IFormInput>();
-    console.log("InputControlledShadcn rendered");
+    console.log("InputControlledShadcn rendered" + name);
 
     return (
         <Controller

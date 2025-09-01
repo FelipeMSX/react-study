@@ -1,8 +1,8 @@
 import "./global.css";
 
 import { Routes, Route, Link } from "react-router-dom";
-import About from "./pages/about/page";
 import Callback from "./pages/callback/page";
+import About from "./pages/about/page";
 import ReactHook from "./pages/react-hook-form/page";
 
 function App() {
