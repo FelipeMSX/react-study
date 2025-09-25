@@ -8,5 +8,11 @@
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist"
     },
-    "exclude": ["node_modules", "**/*.spec.*", "**/*.test.*", "./dist/**/*", "../common/**/*test.*"]
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.*",
+        "./dist/**/*",
+        "../common/**/*test.*"
+    ]
 }

@@ -14,7 +14,7 @@
     "author": "Felipe Morais <felipeprodev@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "@eslint/js": "^9.30.1",
+        "@monorepo/eslint": "workspaces:*",
         "@types/cli-progress": "^3",
         "@types/k6": "^1.0.2",
         "@types/node": "^22.10.6",
@@ -23,7 +23,6 @@
         "k6": "^0.0.0",
         "prettier": "^3.5.3",
         "typescript": "5.7.2",
-        "typescript-eslint": "^8.35.1",
         "vitest": "^3.1.1"
     }
 }

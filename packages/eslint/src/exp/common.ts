@@ -3,4 +3,4 @@ import { jsonConfig } from "../configs/json-eslint.config";
 import { reactConfig } from "../configs/react-eslint.config";
 import { utilsConfig } from "../configs/utils-eslint-config";
 
-export const defaultConfig = [...baseConfig, ...utilsConfig, ...jsonConfig, ...reactConfig];
+export const globalConfig = [...baseConfig, ...utilsConfig, ...jsonConfig, ...reactConfig];

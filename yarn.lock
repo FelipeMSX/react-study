@@ -514,6 +514,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/js@npm:^9.36.0":
+  version: 9.36.0
+  resolution: "@eslint/js@npm:9.36.0"
+  checksum: 10c0/e3f6fb7d6f117d79615574f7bef4f238bcfed6ece0465d28226c3a75d2b6fac9cc189121e8673562796ca8ccea2bf9861715ee5cf4a3dbef87d17811c0dac22c
+  languageName: node
+  linkType: hard
+
 "@eslint/object-schema@npm:^2.1.6":
   version: 2.1.6
   resolution: "@eslint/object-schema@npm:2.1.6"
@@ -644,10 +651,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monorepo/eslint@workspace:packages/eslint":
+"@monorepo/eslint@workspace:packages/eslint, @monorepo/eslint@workspaces:*":
   version: 0.0.0-use.local
   resolution: "@monorepo/eslint@workspace:packages/eslint"
   dependencies:
+    "@eslint/js": "npm:^9.36.0"
     "@types/eslint-plugin-jsx-a11y": "npm:^6.10.0"
     eslint: "npm:^9.24.0"
     eslint-config-prettier: "npm:^10.1.5"
@@ -659,6 +667,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     jiti: "npm:^2.4.2"
+    typescript-eslint: "npm:^8.35.1"
   languageName: unknown
   linkType: soft
 
@@ -666,7 +675,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@monorepo/study@workspace:."
   dependencies:
-    "@eslint/js": "npm:^9.30.1"
+    "@monorepo/eslint": "workspaces:*"
     "@types/cli-progress": "npm:^3"
     "@types/k6": "npm:^1.0.2"
     "@types/node": "npm:^22.10.6"
@@ -675,7 +684,6 @@ __metadata:
     k6: "npm:^0.0.0"
     prettier: "npm:^3.5.3"
     typescript: "npm:5.7.2"
-    typescript-eslint: "npm:^8.35.1"
     vitest: "npm:^3.1.1"
   languageName: unknown
   linkType: soft

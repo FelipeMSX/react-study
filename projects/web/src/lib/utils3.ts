@@ -8,7 +8,7 @@ import path from "path";
 export function exemploImportOrder() {
     console.log("haheh");
     const teste = "hehe";
-    // Usando useState do React
+    // Usando o useState do React
     const [valor, setValor] = useState(0);
     // Usando path para resolver um caminho
     const caminho = path.resolve("./algum-arquivo.txt");

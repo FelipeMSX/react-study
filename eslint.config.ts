@@ -1,3 +1,3 @@
-import { defaultConfig } from "@monorepo/eslint";
+import { globalConfig } from "@monorepo/eslint";
 
-export default defaultConfig;
+export default globalConfig;
