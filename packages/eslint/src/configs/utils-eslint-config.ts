@@ -1,11 +1,12 @@
+import { defineConfig } from "eslint/config";
 import * as eslintPluginImport from "eslint-plugin-import";
 import * as prettier from "eslint-plugin-prettier";
-import tseslint from "typescript-eslint";
 
-export const utilsConfig = tseslint.config([
-    // Configuration for TypeScript and JavaScript files (non-React)
+import { ignoredFolders } from "../shared";
+
+export const utilsConfig = defineConfig([
+    ignoredFolders,
     {
-        ignores: ["**/node_modules/**", "**/dist/**", "**/.next/**", "**/build/**"],
         files: ["**/*.ts", "**/*.js", "**/*.tsx", "**/*.jsx"],
         plugins: {
             prettier,

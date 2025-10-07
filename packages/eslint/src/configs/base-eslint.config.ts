@@ -1,14 +1,14 @@
 import * as eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-export const baseConfig = tseslint.config(
-    // Base recommended configs
-    eslint.configs.recommended,
-    tseslint.configs.recommended,
-    // Configuration for TypeScript and JavaScript files (non-React)
+import { ignoredFolders } from "../shared";
+
+export const baseConfig = defineConfig([
+    ignoredFolders,
     {
-        ignores: ["**/node_modules/**", "**/dist/**", "**/.next/**", "**/build/**"],
         files: ["**/*.ts", "**/*.js", "**/*.tsx", "**/*.jsx"],
+        extends: [eslint.configs.recommended, tseslint.configs.recommended],
         languageOptions: {
             ecmaVersion: 2022,
             sourceType: "module",
@@ -16,6 +16,7 @@ export const baseConfig = tseslint.config(
                 projectService: true,
             },
         },
+
         settings: {
             "import/resolver": {
                 typescript: {},
@@ -27,4 +28,4 @@ export const baseConfig = tseslint.config(
             "@typescript-eslint/no-explicit-any": "warn",
         },
     },
-);
+]);

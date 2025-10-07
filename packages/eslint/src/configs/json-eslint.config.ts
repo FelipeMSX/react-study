@@ -1,21 +1,25 @@
+import { defineConfig } from "eslint/config";
 import jsoncPlugin from "eslint-plugin-jsonc";
 import * as prettier from "eslint-plugin-prettier";
-import tseslint from "typescript-eslint";
 
-export const jsonConfig = tseslint.config(...jsoncPlugin.configs["flat/recommended-with-jsonc"], {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/.next/**", "**/build/**"],
+import { ignoredFolders } from "../shared";
 
-    files: ["**/*.json", "**/*.jsonc"],
-    plugins: {
-        prettier,
+export const jsonConfig = defineConfig([
+    ignoredFolders,
+    {
+        files: ["**/*.json", "**/*.jsonc"],
+        extends: [jsoncPlugin.configs["flat/recommended-with-jsonc"]],
+        plugins: {
+            prettier,
+        },
+        rules: {
+            "prettier/prettier": [
+                "error",
+                {
+                    trailingComma: "all",
+                    tabWidth: 4,
+                },
+            ],
+        },
     },
-    rules: {
-        "prettier/prettier": [
-            "error",
-            {
-                trailingComma: "all",
-                tabWidth: 4,
-            },
-        ],
-    },
-});
+]);

@@ -1,16 +1,15 @@
+import { defineConfig } from "eslint/config";
 import jsxA11Y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
-import tseslint from "typescript-eslint";
 
-export const reactConfig = tseslint.config(
-    jsxA11Y.flatConfigs.recommended,
-    reactHooks.configs["recommended-latest"],
-    // Configuration for React files
+import { ignoredFolders } from "../shared";
+
+export const reactConfig = defineConfig([
+    ignoredFolders,
     {
-        ignores: ["**/node_modules/**", "**/dist/**", "**/.next/**", "**/build/**"],
-
         files: ["**/*.tsx", "**/*.jsx"],
+        extends: [jsxA11Y.flatConfigs.recommended, reactHooks.configs["recommended-latest"]],
         plugins: {
             react,
         },
@@ -42,4 +41,4 @@ export const reactConfig = tseslint.config(
             "jsx-a11y/interactive-supports-focus": "warn",
         },
     },
-);
+]);
